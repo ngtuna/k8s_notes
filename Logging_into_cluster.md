@@ -18,7 +18,8 @@ kubectl config set-credentials kubeuser/foo.kubernetes.com --username=kubeuser -
 kubectl config set-cluster foo.kubernetes.com --insecure-skip-tls-verify=true --server=https://foo.kubernetes.com
 ```
 
-##Create a context. This context basically points to the cluster with a specific user. Using (and properly organizing) our different contexts, we can quickly switch across multiple clusters:
+##Create a context. 
+This context basically points to the cluster with a specific user. Using (and properly organizing) our different contexts, we can quickly switch across multiple clusters:
 
 ```
 kubectl config set-context default/foo.kubernetes.com/kubeuser --user=kubeuser/foo.kubernetes.com --namespace=default --cluster=foo.kubernetes.com
