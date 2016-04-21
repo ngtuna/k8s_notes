@@ -56,6 +56,6 @@ http://kubernetes.io/docs/user-guide/config-best-practices/
 ## Design docs
 
 ## Swagger-UI
-https://<master-ip>:6443/swagger-ui
+https://master-ip:6443/swagger-ui
 
 user/pass: located at `kuberctl config view`
