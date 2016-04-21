@@ -8,6 +8,9 @@ http://slides.eightypercent.net/kubernetes-101/kubernetes-101.html
 
 *Kubernetes 201*
 
+*KubeCon 2016 - Key note*
+http://www.slideshare.net/kubecon/kubecon-eu-2016-keynote-kubernetes-state-of-the-union
+
 ## Best practices
 http://kubernetes.io/docs/user-guide/config-best-practices/
 
@@ -51,3 +54,8 @@ http://kubernetes.io/docs/user-guide/config-best-practices/
 *Resource Quotas*
 
 ## Design docs
+
+## Swagger-UI
+https://<master-ip>:6443/swagger-ui
+
+user/pass: located at `kuberctl config view`

@@ -143,8 +143,9 @@ Service could be exposed onto an external or internal network. Kubernetes `Servi
 
 Valid values for the **ServiceType** field are:
 - **ClusterIP**: use a cluster-internal IP only - this is the default and is discussed above. Choosing this value means that you want this service to be reachable only from inside of the cluster.
-- **NodePort**: on top of having a cluster-internal IP, expose the service on a port on each node of the cluster (the same port on each node). You’ll be able to contact the service on any **<NodeIP>:NodePort** address.
-- **LoadBalancer**: on top of having a cluster-internal IP and exposing service on a NodePort also, ask the cloud provider for a load balancer which forwards to the `Service` exposed as a **<NodeIP>:NodePort** for each Node.
+- **NodePort**: on top of having a cluster-internal IP, expose the service on a port on each node of the cluster (the same port on each node). You’ll be able to contact the service on any **NodeIP:NodePort** address.
+- **LoadBalancer**: on top of having a cluster-internal IP and exposing service on a NodePort also, ask the cloud provider for a load balancer which forwards to the `Service` exposed as a **NodeIP:NodePort** for each Node.
+
 ###Type NodePort
 Kubernetes master will allocate a port from a flag-configured range (default: 30000-32767), and each Node will proxy that port (the same port number on every Node) into your `Service`
 
