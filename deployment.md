@@ -1,5 +1,14 @@
 # Deployment
 
+- [What is Deployment](# What is Deployment)
+- [The status of a Deployment](#The status of a Deployment)
+- [Update Deployment](#)
+  - [Rolling back a Deployment](# Rolling back a Deployment)
+  - [Checking Rollout History of a Deployment](# Checking Rollout History of a Deployment)
+  - [Rolling Back to a Previous Revision](# Rolling Back to a Previous Revision)
+  - [Pausing and Resuming a Deployment](# Pausing and Resuming a Deployment)
+- [Deployment spec](# Deployment spec)
+
 ## What is Deployment
 A **Deployment** provides declarative updates for **Pods** and **Replica Sets** (the next-generation Replication Controller). You only need to describe the desired state in a Deployment object, and the Deployment controller will change the actual state to the desired state at a controlled rate for you.
 
