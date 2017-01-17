@@ -90,3 +90,7 @@ You can expose a Service in multiple ways that don't directly involve the Ingres
 - use Service.Type=NodePort
 - use a [Port Proxy](https://github.com/kubernetes/contrib/tree/master/for-demos/proxy-to-service)
 - deploy the [Service LoadBalancer](https://github.com/kubernetes/contrib/tree/master/service-loadbalancer)
+
+## More
+
+http://onelineatatime.io/ingress-controller-forget-about-the-service/
