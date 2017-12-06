@@ -1,0 +1,60 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: docker-frontend
+  name: docker-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: docker-frontend
+  template:
+    metadata:
+      labels:
+        app: docker-frontend
+    spec:
+      containers:
+      - env:
+        - name: ENV_DOCKER_REGISTRY_HOST
+          value: docker.example.com
+        - name: ENV_DOCKER_REGISTRY_PORT
+          value: "443"
+        - name: ENV_DOCKER_REGISTRY_USE_SSL
+          value: "1"
+        - name: ENV_MODE_BROWSE_ONLY
+          value: "true"
+        image: konradkleine/docker-registry-frontend:v2
+        name: docker-frontend
+        ports:
+        - containerPort: 80
+          protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: docker-frontend
+  name: docker-frontend
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: docker-frontend
+  type: ClusterIP
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: http-docker-frontend
+spec:
+  rules:
+  - host: docker-frontend.example.com
+    http:
+      paths:
+      - backend:
+          serviceName: docker-frontend
+          servicePort: 80
